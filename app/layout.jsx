@@ -1,7 +1,10 @@
 import "./globals.css";
+import {Rubik} from 'next/font/google'
 
 //Components
 import Navbar from "./components/Navbar";
+
+const rubik = Rubik({subsets: ['latin-ext']})
 
 export const metadata = {
   title: "Starter App",
@@ -12,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Navbar />
-      <body>{children}</body>
+      <body className={rubik.className}>{children}</body>
     </html>
   );
 }
